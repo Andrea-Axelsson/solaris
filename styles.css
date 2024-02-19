@@ -1,0 +1,165 @@
+html, body{
+    background: linear-gradient(90deg, #2A3889 0%, #190B22 100%);
+    
+}
+
+.solaris-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    height: 100vh;
+    
+}
+
+.title-text{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-self: flex-end;
+    align-items: end;
+    padding: 5em 5em 0 0;
+}
+
+.article{
+    max-width: 640px;
+}
+
+.title-1{
+    font-family: "Secular One", sans-serif;
+    font-weight: 400;
+    color: #fff;
+    font-size: 3.75rem;
+    margin: 0;
+    letter-spacing: .3rem;
+}
+
+.title-2{
+    font-family: "Lora", serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    color: #FFD029;
+    font-size: 1.5rem;
+    margin: 0;
+    letter-spacing: .6rem;
+}
+
+.sun-and-planets{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin: auto 0;
+}
+
+.planet-container{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    gap: 100px;
+    justify-content: flex-end;
+    align-items: center;
+    margin: auto 0;
+    padding-right: 5em; 
+}
+
+.sun {
+    width: 1000px;
+    height: 500px;
+    background-color: #FFD029;
+    border-radius: 500px 500px 0 0;
+    transform: rotate(90deg);
+    margin-left: -500px;
+    filter: drop-shadow(0 0 2.75rem #ffe278);
+    
+}
+
+.planet{
+    width: 50px;
+    height: 50px;
+    background: red;
+    border-radius: 50%;
+}
+
+.mercury{
+   width: 14px;
+   height: 14px;
+   border-radius: 50%;
+   background:#888888; 
+}
+
+.venus{
+   width: 26px;
+   height: 26px;
+   border-radius: 50%;
+   background:#E7CDCD; 
+}
+
+.tellus{
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    background:#428ED4; 
+ }
+
+ .mars{
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background:#EF5F5F;
+ }
+
+ .mars{
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background:#EF5F5F;
+ }
+
+ .jupiter{
+    width: 188px;
+    height: 188px;
+    border-radius: 50%;
+    background:#E29468;
+ }
+
+ .saturn{
+    position: relative;
+    width: 144px;
+    height: 144px;
+    transform: rotate(20deg)
+ }
+
+ .saturns-rings{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 250px;
+    height: 10px;
+    border-radius: 50%;
+    background: #fff;
+    opacity: 0.5;
+    
+ }
+
+ .saturn-body{
+    width: 144px;
+    height: 144px;
+    border-radius: 50%;
+    background:#C7AA72;
+ }
+
+ .uranus{
+    width: 66px;
+    height: 66px;
+    border-radius: 50%;
+    background:#C9D4F1;
+ }
+
+ .neptune{
+    width: 66px;
+    height: 66px;
+    border-radius: 50%;
+    background:#7A91A7;
+ }
+ 
