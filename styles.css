@@ -1,135 +1,141 @@
 html, body{
     background: linear-gradient(90deg, #2A3889 0%, #190B22 100%);
-    
 }
 
-.solaris-container {
+/* SOLARIS PAGE */
+
+.solaris {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: flex-start;
     height: 100vh;
-    
 }
 
-.title-text{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-self: flex-end;
-    align-items: end;
-    padding: 5em 5em 0 0;
+.solaris__search-form{
+    margin-bottom: 5em;
+    padding: 0;
 }
 
-.article{
-    max-width: 640px;
-}
-
-.title-1{
+.solaris__search-input{
+    height: 30px;
+    width: 200px;
+    padding-left: 0.625em;
+    margin-right: 0.625em;
+    border-radius: 5px;
+    border: none;
     font-family: "Secular One", sans-serif;
-    font-weight: 400;
-    color: #fff;
-    font-size: 3.75rem;
+}
+
+.solaris__search-button{
+    padding: 6px 30px;
+    font-family: "Secular One", sans-serif;
+    border: none;
+    border-radius: 5px;
+    background-color: #fff;
+    text-decoration: none;
+    color: #767676;
+    font-size: 14px;
+}
+
+.solaris__search-button:hover{
+    cursor: pointer;
+    background-color: #cacaca;
+    color: #000000;
+}
+
+.solaris__suggestion-box p{
+    height: 30px;
+    width: 200px;
+    padding: 0.625em 0 0 0.625em;
+    border-radius: 5px;
+    border: none;
+    background-color: #fdfdfd;
+    font-family: "Secular One", sans-serif;
     margin: 0;
-    letter-spacing: .3rem;
+    font-size: 12px;
 }
 
-.title-2{
-    font-family: "Lora", serif;
-    font-optical-sizing: auto;
-    font-weight: 400;
-    color: #FFD029;
-    font-size: 1.5rem;
-    margin: 0;
-    letter-spacing: .6rem;
+.solaris__suggestion-box p:hover{
+    border: none;
+    background-color: #cacaca;
+    cursor: pointer;
+    border: 1px solid #6e6e6e;
+
 }
 
-.sun-and-planets{
-    display: flex;
-    justify-content: space-between;
-    width: 100%;
-    margin: auto 0;
-}
-
-.planet-container{
+.solaris__planets{
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
     gap: 100px;
-    justify-content: flex-end;
+    justify-content:right;
     align-items: center;
-    margin: auto 0;
-    padding-right: 5em; 
+    margin: 3.125em 15.625em;
+    padding-right: 5em;
 }
 
-.sun {
-    width: 1000px;
-    height: 500px;
+.solaris__sun,
+.planet-article__planet-big
+ {
+    width: 800px;
+    height: 400px;
     background-color: #FFD029;
-    border-radius: 500px 500px 0 0;
+    border-radius: 400px 400px 0 0;
     transform: rotate(90deg);
-    margin-left: -500px;
     filter: drop-shadow(0 0 2.75rem #ffe278);
+    position: absolute;
+    top: 30%;
+    left: 0;
+    margin-left: -25em;
     
 }
 
-.planet{
-    width: 50px;
-    height: 50px;
-    background: red;
-    border-radius: 50%;
-}
 
-.mercury{
+.solaris__planets--mercury{
    width: 14px;
    height: 14px;
    border-radius: 50%;
    background:#888888; 
 }
 
-.venus{
+.solaris__planets--venus{
    width: 26px;
    height: 26px;
    border-radius: 50%;
    background:#E7CDCD; 
 }
 
-.tellus{
+.solaris__planets--earth{
     width: 28px;
     height: 28px;
     border-radius: 50%;
     background:#428ED4; 
  }
 
- .mars{
+ .solaris__planets--mars{
     width: 14px;
     height: 14px;
     border-radius: 50%;
     background:#EF5F5F;
  }
 
- .mars{
-    width: 14px;
-    height: 14px;
-    border-radius: 50%;
-    background:#EF5F5F;
- }
 
- .jupiter{
+ .solaris__planets--jupiter{
     width: 188px;
     height: 188px;
     border-radius: 50%;
     background:#E29468;
  }
 
- .saturn{
+ .solaris__planets--saturn{
     position: relative;
     width: 144px;
     height: 144px;
     transform: rotate(20deg)
  }
 
- .saturns-rings{
+ .solaris__planets--saturn__rings{
     position: absolute;
     top: 50%;
     left: 50%;
@@ -142,24 +148,110 @@ html, body{
     
  }
 
- .saturn-body{
+ .solaris__planets--saturn__body{
     width: 144px;
     height: 144px;
     border-radius: 50%;
     background:#C7AA72;
  }
 
- .uranus{
+ .solaris__planets--uranus{
     width: 66px;
     height: 66px;
     border-radius: 50%;
     background:#C9D4F1;
  }
 
- .neptune{
+ .solaris__planets--neptune{
     width: 66px;
     height: 66px;
     border-radius: 50%;
     background:#7A91A7;
  }
- 
+
+ /* PLANET INFO PAGE */
+
+ .planet-article{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.planet-article__content{
+    align-self: center;
+    max-width: 640px;
+}
+
+.planet-article__facts-grid{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+.planet-article__divider{
+    color: #fff;
+}
+
+.planet-article__back-button{
+        font-family: "Secular One", sans-serif;
+        font-size: 20px;
+        font-weight: 400;
+        font-style: normal;
+        color: #fff;
+        margin-top: 1.25em;
+        background: none;
+        border: none;
+        text-decoration: none;
+}
+
+/* TEXT */
+
+.solaris__title{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-self: flex-end;
+    align-items: end;
+    padding: 5em 5em 0 0;
+}
+
+.title-heading{
+    font-family: "Secular One", sans-serif;
+    font-weight: 400;
+    color: #fff;
+    font-size: 3.75rem;
+    margin: 0;
+    letter-spacing: .3rem;
+}
+
+.title-subheading{
+    font-family: "Lora", serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    color: #FFD029;
+    font-size: 1.5rem;
+    margin-bottom: 1.25em;
+    letter-spacing: .6rem;
+}
+
+.planet-fact__title{
+    font-family: "Secular One", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    color: #fff;
+    margin-top: 1.25em;
+}
+
+.planet-article__body-text{
+    font-family: "Roboto Condensed", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 300;
+    font-style: normal;
+    color: #fff;
+    line-height: 150%;
+    margin-bottom: 1.25em;
+}
+
+
