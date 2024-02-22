@@ -4,11 +4,20 @@ import {getLocalstorage} from "./localstorage.js"
 const planetFactContainer = document.getElementById("planet-fact-container")
 let suggestionPlanetSearch = getLocalstorage("suggestionPlanetSearch")
 let inputPlanetSearch = getLocalstorage("inputPlanetSearch")
+const planetColors ={
+    "Merkurius": "#888888",
+    "Venus": "#E7CDCD",
+    "Jorden": "#428ED4",
+    "Mars": "#EF5F5F",
+    "Jupiter": "#E29468",
+    "Saturnus": "#C7AA72",
+    "Uranus": "#C9D4F1",
+    "Neptunus": "#7A91A7",
+}
 
 function getMatchingPlanet(planets, searchQuery){
     return planets.find(planet => planet.name === searchQuery)
 }
-
 
 function getPlanetFactHtml(planet){
 
@@ -17,7 +26,7 @@ function getPlanetFactHtml(planet){
     }
 
    let html = `
-   <article class="planet-article__planet-big"></article>
+   <article class="planet-article__planet-big" style="background-color: ${planetColors[planet.name]}"></article>
 
             <section class="planet-article__content">
                 <h1 class="title-heading">${planet.name}</h1>
@@ -52,7 +61,7 @@ function getPlanetFactHtml(planet){
         </section>
         <a href="index.html" class="planet-article__back-button">TILLBAKA</a>
         `
-
+        
         return html
 }
 

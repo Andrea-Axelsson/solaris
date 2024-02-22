@@ -22,9 +22,3 @@ export default async function planetsApi(inputPlanetSearch){
     }
 
 }
-
-/* Skicka in value som matchar med planet.name. Använd någon filter funktion här.
-Detta kommer göra att planetsApi retunerar det valda objektet som jag sen kan använda i tellus.js
-
-Jag har en array med 9 objekt. Jag vill få ut ett objekt där objektets namn matchar mitt input value
-*/
