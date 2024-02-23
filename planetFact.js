@@ -1,9 +1,20 @@
+// Denna modul hanterar visningen av detaljerad information om planeter. Den hämtar planetdata via API-anrop,
+// matchar användarens sökning med tillgängliga planeter, och renderar sedan vald planets information 
+// i HTML. Använder lokal lagring för att hämta tidigare sökningar och stöder dynamisk uppdatering av innehåll.
+
+
+// Importerar funktioner från andra moduler.
 import planetsApi from "./fetchApi.js"
 import {getLocalstorage} from "./localstorage.js"
 
+// Hämtar DOM-elementet där planetfakta kommer att visas.
 const planetFactContainer = document.getElementById("planet-fact-container")
+
+// Hämtar sparade sökningar från local storage.
 let suggestionPlanetSearch = getLocalstorage("suggestionPlanetSearch")
 let inputPlanetSearch = getLocalstorage("inputPlanetSearch")
+
+// Ett objekt som innehåller färgkoderna för olika planeter.
 const planetColors ={
     "Merkurius": "#888888",
     "Venus": "#E7CDCD",
@@ -15,15 +26,19 @@ const planetColors ={
     "Neptunus": "#7A91A7",
 }
 
+// Funktion för att hitta en planet som matchar sökfrågan.
 function getMatchingPlanet(planets, searchQuery){
     return planets.find(planet => planet.name === searchQuery)
 }
 
+// Funktion för att generera HTML-kod för planetfakta.
 function getPlanetFactHtml(planet){
-
+    // Om det inte finns någon planet, returnera en platsmarkörstext.
     if (!planet){
         return '<p>Planet information is not available.</p>'
     }
+
+    // Skapar HTML-struktur för att visa planetfakta.
 
    let html = `
    <article class="planet-article__planet-big" style="background-color: ${planetColors[planet.name]}"></article>
@@ -64,22 +79,25 @@ function getPlanetFactHtml(planet){
         
         return html
 }
-
+// Anropar planetsApi för att hämta planetdata och sedan visa relevant information.
 planetsApi().then(planets => {
     let planet
 
+    // Bestämmer vilken planet att visa baserat på sparad sökning.
     if (suggestionPlanetSearch){
         planet = getMatchingPlanet(planets, suggestionPlanetSearch)
     }else if (inputPlanetSearch) {
         planet = getMatchingPlanet(planets, inputPlanetSearch)
     }
 
+    // Loggar om en matchande planet hittades eller inte.
     if (planet) {
         console.log("Matched Planet:", planet);
     } else {
         console.log("No matching planet found");
     }
 
+    // Genererar HTML för planetfakta och uppdaterar DOM.
     let planetHtml = getPlanetFactHtml(planet)
     planetFactContainer.innerHTML = planetHtml
 })

@@ -1,4 +1,10 @@
 <!DOCTYPE html>
+
+<!--
+    Denna HTML-sida presenterar en interaktiv utforskning av solsystemet, komplett med en sökfunktion för planeter, 
+    stiliserad med FontAwesome-ikoner och Google Fonts, och anpassad med responsiv CSS.
+-->
+
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -16,8 +22,6 @@
     <!-- STYLESHEET -->
 
     <link rel="stylesheet" href="styles.css">
-
-   
 
     <title>Solaris</title>
 </head>
@@ -37,11 +41,9 @@
                 <input id="search-box" class="solaris__search-input" onkeyup="searchSuggestion()" type="text" name="planet" placeholder="Sök efter planet" autocomplete="off">
                 <a href="planetFact.html" id="search-button" class="solaris__search-button">Sök</a>
                 <div id="suggestion-box" class="solaris__suggestion-box"></div>
-                
             </form>
 
             <section class="solaris__planets">
-
                 <article class="solaris__planets--mercury"></article>
                 <article class="solaris__planets--venus"></article>
                 <article class="solaris__planets--earth"></article>
@@ -54,12 +56,7 @@
                 </article>
                 <article class="solaris__planets--uranus"></article>
                 <article class="solaris__planets--neptune"></article>
-                
             </section>
-
-
-        
-       
     </main>
     <script type="module" src="index.js"></script>
 </body>
