@@ -9,32 +9,24 @@
 export default async function planetsApi(inputPlanetSearch){
 
     try {
-        // Första API-anropet för att hämta en API-nyckel.
         const response = await fetch('https://n5n3eiyjb0.execute-api.eu-north-1.amazonaws.com/keys', {
             method: 'POST'
         })
-        // Konverterar svaret till JSON och extraherar API-nyckeln.
         const apiKey = await response.json()
-
         try {
-            // Andra API-anropet för att hämta planetdata med den erhållna API-nyckeln.
             const response_1 = await fetch('https://n5n3eiyjb0.execute-api.eu-north-1.amazonaws.com/bodies', {
                 method: 'GET',
-                headers: { 'x-zocom': apiKey.key } // Använder API-nyckeln i anropets headers.
+                headers: { 'x-zocom': apiKey.key }
             })
-            // Konverterar svaret till JSON och extraherar planetdata.
             const data = await response_1.json()
             const planets = data.bodies
-            console.log("planets", planets) // Skriver ut planetdatan till konsolen.
-
-            // Returnerar planetdatan.
+            console.log("planets", planets)
             return planets
         } catch (error) {
-            // Fångar och loggar eventuella fel från det andra API-anropet.
             return console.error('Error', error)
         }
     } catch (error_1) {
-        // Fångar och loggar eventuella fel från det första API-anropet.
         return console.error('Error:', error_1)
     }
+
 }

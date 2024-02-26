@@ -76,7 +76,6 @@ function getPlanetFactHtml(planet){
         </section>
         <a href="index.html" class="planet-article__back-button">TILLBAKA</a>
         `
-        
         return html
 }
 // Anropar planetsApi för att hämta planetdata och sedan visa relevant information.
